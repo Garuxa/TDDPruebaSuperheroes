@@ -5,4 +5,4 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "superHero")
-data class HeroEntity(@PrimaryKey @ColumnInfo(name = "superHero_name") val SuperHeroName: String)
+data class SuperHeroEntity(@PrimaryKey @ColumnInfo(name = "superHero_name") val SuperHeroName: String)
