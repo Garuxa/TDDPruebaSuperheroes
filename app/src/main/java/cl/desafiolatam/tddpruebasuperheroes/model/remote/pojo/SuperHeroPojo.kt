@@ -21,7 +21,7 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
         val id: Int, // 731
         @SerializedName("name")
         val name: String, // Zoom
-        @SerializedName("slug")
+        /*@SerializedName("slug")
         val slug: String, // 731-zoom
         @SerializedName("powerstats")
         val powerstats: Powerstats,
@@ -32,11 +32,11 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
         @SerializedName("work")
         val work: Work,
         @SerializedName("connections")
-        val connections: Connections,
+        val connections: Connections,*/
         @SerializedName("images")
         val images: Images
     ) {
-        data class Powerstats(
+        /*data class Powerstats(
             @SerializedName("intelligence")
             val intelligence: Int, // 50
             @SerializedName("strength")
@@ -49,9 +49,9 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             val power: Int, // 100
             @SerializedName("combat")
             val combat: Int // 28
-        )
+        )*/
 
-        data class Appearance(
+        /*data class Appearance(
             @SerializedName("gender")
             val gender: String, // Male
             @SerializedName("race")
@@ -64,9 +64,9 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             val eyeColor: String, // Red
             @SerializedName("hairColor")
             val hairColor: String // Brown
-        )
+        )*/
 
-        data class Biography(
+        /*data class Biography(
             @SerializedName("fullName")
             val fullName: String, // Hunter Zolomon
             @SerializedName("alterEgos")
@@ -81,21 +81,21 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             val publisher: String, // DC Comics
             @SerializedName("alignment")
             val alignment: String // bad
-        )
+        )*/
 
-        data class Work(
+        /*data class Work(
             @SerializedName("occupation")
             val occupation: String, // -
             @SerializedName("base")
             val base: String // Keystone City, Kansas
-        )
+        )*/
 
-        data class Connections(
+        /*data class Connections(
             @SerializedName("groupAffiliation")
             val groupAffiliation: String, // Secret Society of Super Villains, formerly Keystone Police Department, F.B.I.
             @SerializedName("relatives")
             val relatives: String // Ashley Zolomon (ex-wife)
-        )
+        )*/
 
         data class Images(
             @SerializedName("xs")
