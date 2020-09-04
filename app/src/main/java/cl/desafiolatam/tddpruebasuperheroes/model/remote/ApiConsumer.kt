@@ -7,13 +7,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface SuperHeroesAPI {
-    @GET("/all.json")
-    fun allSuperHeroes(): Call<SuperHeroPojo>
+    @GET("all.json")
+    fun listaHeroes(): Call<SuperHeroPojo>
 }
 
 class RetrofitClient {
     companion object {
-        private const val BASE_URL = "https://akabab.github.io/superhero-api/api"
+        private const val BASE_URL = "https://akabab.github.io/superhero-api/api/"
 
         fun retrofitInstance(): SuperHeroesAPI {
             val retrofit = Retrofit.Builder()
