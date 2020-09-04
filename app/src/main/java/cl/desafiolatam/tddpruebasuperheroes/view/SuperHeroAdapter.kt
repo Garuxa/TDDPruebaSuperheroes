@@ -3,15 +3,13 @@ package cl.desafiolatam.tddpruebasuperheroes.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatam.tddpruebasuperheroes.R
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroPojo
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.superheroes_list_item.view.*
 
-class SuperHeroAdapter(private var myDataset: List<SuperHeroPojo.SuperHeroPojoItem>) :
+class SuperHeroAdapter(private var myDataset: MutableList<SuperHeroPojo.SuperHeroPojoItem>) :
     RecyclerView.Adapter<SuperHeroAdapter.SuperHeroHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -36,7 +34,13 @@ class SuperHeroAdapter(private var myDataset: List<SuperHeroPojo.SuperHeroPojoIt
     }
 
     class SuperHeroHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var photo: ImageView = itemView.iv_superhero_list
-        var name_title: TextView = itemView.superhero_name_title
+        var photo = itemView.iv_superhero_list
+        var name_title = itemView.superhero_name_title
+    }
+
+    fun updateItems(it: ArrayList<SuperHeroPojo.SuperHeroPojoItem>) {
+        myDataset.clear()
+        myDataset.addAll(it)
+        notifyDataSetChanged()
     }
 }
