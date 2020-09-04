@@ -8,7 +8,7 @@ import retrofit2.http.GET
 
 interface SuperHeroesAPI {
     @GET("/all.json")
-    fun listaHeroes(): Call<SuperHeroPojo>
+    fun allSuperHeroes(): Call<SuperHeroPojo>
 }
 
 class RetrofitClient {
