@@ -19,6 +19,6 @@ interface SuperHeroDao {
     @Query("DELETE FROM supehero_table")
     suspend fun deleteAll()
 
-    @Query("SELECT id, name, img_md FROM supehero_table")
+    @Query("SELECT id, name, appear_race, appear_height, appear_weight, bio_publisher, img_md FROM supehero_table")
     fun getMinimalSuperHeroesList(): LiveData<List<SuperHeroMin>>
 }
