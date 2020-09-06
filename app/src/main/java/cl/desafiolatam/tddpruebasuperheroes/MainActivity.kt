@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.desafiolatam.tddpruebasuperheroes.model.Repository
@@ -29,7 +30,15 @@ class MainActivity : AppCompatActivity() {
         viewAdapter = SuperHeroAdapter(superHeroesList)
         superHero_Recycler.adapter = viewAdapter
 
+        superHero_Recycler.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                LinearLayoutManager.VERTICAL
+            )
+        )
+
         repository.loadApidata()
+        repository.listSuperHero.observe(this, { viewAdapter.updateItems(it) })
 
         /*val picasso = Picasso.Builder(applicationContext)
             //.indicatorsEnabled(true)
