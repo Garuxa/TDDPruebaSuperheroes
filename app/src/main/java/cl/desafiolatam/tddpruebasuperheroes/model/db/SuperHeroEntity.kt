@@ -12,8 +12,8 @@ data class SuperHeroEntity(
     val name: String,
     val slug: String,
     @Embedded val powerstats: SuperHeroPojo.SuperHeroPojoItem.Powerstats,
-    @Embedded val appearance: SuperHeroPojo.SuperHeroPojoItem.Appearance,
-    @Embedded val biography: SuperHeroPojo.SuperHeroPojoItem.Biography,
+    @Embedded val appearance: SuperHeroPojo.SuperHeroPojoItem.Appearance?,
+    @Embedded val biography: SuperHeroPojo.SuperHeroPojoItem.Biography?,
     @Embedded val work: SuperHeroPojo.SuperHeroPojoItem.Work,
     @Embedded val connections: SuperHeroPojo.SuperHeroPojoItem.Connections,
     @Embedded val images: SuperHeroPojo.SuperHeroPojoItem.Images
