@@ -8,30 +8,115 @@
     tools:context=".view.MainActivity">
 
     <ImageView
-        android:id="@+id/iv_superhero_list"
+        android:id="@+id/superHero_img_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/superhero_name_title"
+        android:id="@+id/superHero_name_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_superhero_list"
+        android:padding="4dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/superHero_race_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:text="@string/race_2dots"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_name_item" />
+
+    <TextView
+        android:id="@+id/superHero_race_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_race_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_name_item" />
+
+    <TextView
+        android:id="@+id/superHero_height_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:text="@string/ht_dot"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+
+    <TextView
+        android:id="@+id/superHero_height_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_height_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+
+    <TextView
+        android:id="@+id/superHero_weight_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:text="@string/wt_dot"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_height_item"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+
+    <TextView
+        android:id="@+id/superHero_weight_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_weight_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+
+    <TextView
+        android:id="@+id/superHero_publisher_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:text="@string/publisher_twodots"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_height_list" />
+
+    <TextView
+        android:id="@+id/superHero_publisher_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/superHero_publisher_list"
+        app:layout_constraintTop_toBottomOf="@+id/superHero_height_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>
