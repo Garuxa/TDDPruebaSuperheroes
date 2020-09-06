@@ -57,7 +57,7 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             @SerializedName("gender")
             val gender: String, // Male
             @SerializedName("race")
-            val race: String, // null
+            val race: String?, // null
             @SerializedName("height")
             val height: List<String>,
             @SerializedName("weight")
@@ -80,7 +80,7 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             @SerializedName("firstAppearance")
             val firstAppearance: String, // Flash Secret Files #3
             @SerializedName("publisher")
-            val publisher: String, // DC Comics
+            val publisher: String?, // DC Comics
             @SerializedName("alignment")
             val alignment: String // bad
         )
