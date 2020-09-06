@@ -1,7 +1,9 @@
 package cl.desafiolatam.tddpruebasuperheroes.model
 
+import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.RetrofitClient
@@ -12,6 +14,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Repository {
+
+    var listSuperHero = MutableLiveData<SuperHeroPojo>()
 
     fun loadApidata() {
         val service = RetrofitClient.retrofitInstance()
@@ -25,15 +29,9 @@ class Repository {
                 response.body()?.map {
                     Log.d("MAIN", "${it.id} - ${it.name} - ${it.images.md}")
                 }
+                listSuperHero.value = response.body()
                 //viewAdapter.updateItems(response.body()!!)
                 //viewAdapter.notifyDataSetChanged()
-
-                /*superHero_Recycler.addItemDecoration(
-                    DividerItemDecoration(
-                        this@MainActivity,
-                        LinearLayoutManager.VERTICAL
-                    )
-                )*/
             }
 
             override fun onFailure(call: Call<SuperHeroPojo>, t: Throwable) {
