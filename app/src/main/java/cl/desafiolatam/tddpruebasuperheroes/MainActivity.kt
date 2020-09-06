@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         repository.loadApidata()
         repository.listSuperHero.observe(this, { viewAdapter.updateItems(it) })
+        //repository.listSuperHero.observe(this, Observer { viewAdapter.updateItems(it) })
 
         /*val picasso = Picasso.Builder(applicationContext)
             //.indicatorsEnabled(true)
