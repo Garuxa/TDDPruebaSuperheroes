@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private var superHeroesList = ArrayList<SuperHeroPojo.SuperHeroPojoItem>()
     private lateinit var viewAdapter: SuperHeroAdapter
-    private var repository = Repository()
+    private lateinit var repository: Repository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        repository = Repository(applicationContext)
         repository.loadApidata()
         repository.listSuperHero.observe(this, { viewAdapter.updateItems(it) })
         //repository.listSuperHero.observe(this, Observer { viewAdapter.updateItems(it) })
