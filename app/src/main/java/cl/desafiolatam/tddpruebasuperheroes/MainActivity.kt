@@ -1,7 +1,6 @@
 package cl.desafiolatam.tddpruebasuperheroes
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         repository = Repository(applicationContext)
         repository.loadApidata()
         repository.listSuperHero.observe(this, {
-            Log.d("MAIN", "$it")
             viewAdapter.updateItems(it)
         })
     }
