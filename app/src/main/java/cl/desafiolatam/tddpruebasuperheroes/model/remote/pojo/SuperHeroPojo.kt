@@ -1,5 +1,6 @@
 package cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo
 
+import androidx.room.ColumnInfo
 import androidx.room.TypeConverter
 import com.google.gson.annotations.SerializedName
 import org.jetbrains.annotations.NotNull
@@ -111,3 +112,9 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
         )
     }
 }
+
+data class SuperHeroMin(
+    val id: Int,
+    val name: String,
+    val img_md: String
+)
