@@ -9,12 +9,12 @@ import androidx.room.Query
 @Dao
 interface SuperHeroDao {
 
-    @Query("SELECT * from superHero ORDER BY superHero_name ASC")
+    @Query("SELECT * from supehero_table")
     fun getSuperHeroes(): LiveData<List<SuperHeroEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertSuperHeroes(superHero: List<SuperHeroEntity>)
+    suspend fun insertSuperHeroes(superHeroList: List<SuperHeroEntity>)
 
-    @Query("DELETE FROM superHero")
+    @Query("DELETE FROM supehero_table")
     suspend fun deleteAll()
 }
