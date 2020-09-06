@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.desafiolatam.tddpruebasuperheroes.model.Repository
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.RetrofitClient
+import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroMin
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroPojo
 import cl.desafiolatam.tddpruebasuperheroes.view.SuperHeroAdapter
 import com.squareup.picasso.Picasso
@@ -19,7 +20,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    private var superHeroesList = ArrayList<SuperHeroPojo.SuperHeroPojoItem>()
+    private var superHeroesList = ArrayList<SuperHeroMin>()
     private lateinit var viewAdapter: SuperHeroAdapter
     private lateinit var repository: Repository
 
@@ -39,7 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         repository = Repository(applicationContext)
         repository.loadApidata()
-        repository.listSuperHero.observe(this, { viewAdapter.updateItems(it) })
+        repository.listSuperHero.observe(this, {
+            Log.d("MAIN", "$it")
+            viewAdapter.updateItems(it)
+        })
         //repository.listSuperHero.observe(this, Observer { viewAdapter.updateItems(it) })
 
         /*val picasso = Picasso.Builder(applicationContext)

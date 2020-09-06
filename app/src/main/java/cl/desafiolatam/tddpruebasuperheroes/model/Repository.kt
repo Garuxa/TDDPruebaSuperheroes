@@ -16,8 +16,9 @@ import retrofit2.Response
 
 class Repository(context: Context) {
 
-    var listSuperHero = MutableLiveData<SuperHeroPojo>()
+
     var superHerodb = SuperHeroRoomDatabase.getDatabase(context)
+    var listSuperHero = superHerodb.getSuperHeroDao().getMinimalSuperHeroesList()
 
     fun loadApidata() {
         val service = RetrofitClient.retrofitInstance()
@@ -31,7 +32,7 @@ class Repository(context: Context) {
                 response.body()?.map {
                     Log.d("MAIN", "${it.id} - ${it.name} - ${it.images.md}")
                 }
-                listSuperHero.value = response.body()
+                //listSuperHero.value = response.body()
                 saveDB(superHeroToSuperHeroEntity(response.body()!!))
                 //viewAdapter.updateItems(response.body()!!)
                 //viewAdapter.notifyDataSetChanged()
