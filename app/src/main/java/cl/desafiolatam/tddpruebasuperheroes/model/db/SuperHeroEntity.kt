@@ -11,10 +11,10 @@ data class SuperHeroEntity(
     @PrimaryKey val id: Int,
     val name: String,
     val slug: String,
-    @Embedded val powerstats: SuperHeroPojo.SuperHeroPojoItem.Powerstats,
-    @Embedded val appearance: SuperHeroPojo.SuperHeroPojoItem.Appearance?,
-    @Embedded val biography: SuperHeroPojo.SuperHeroPojoItem.Biography?,
-    @Embedded val work: SuperHeroPojo.SuperHeroPojoItem.Work,
-    @Embedded val connections: SuperHeroPojo.SuperHeroPojoItem.Connections,
-    @Embedded val images: SuperHeroPojo.SuperHeroPojoItem.Images
+    @Embedded(prefix = "pwrsts_") val powerstats: SuperHeroPojo.SuperHeroPojoItem.Powerstats,
+    @Embedded(prefix = "appear_") val appearance: SuperHeroPojo.SuperHeroPojoItem.Appearance?,
+    @Embedded(prefix = "bio_") val biography: SuperHeroPojo.SuperHeroPojoItem.Biography?,
+    @Embedded(prefix = "work_") val work: SuperHeroPojo.SuperHeroPojoItem.Work,
+    @Embedded(prefix = "connect_") val connections: SuperHeroPojo.SuperHeroPojoItem.Connections,
+    @Embedded(prefix = "img_") val images: SuperHeroPojo.SuperHeroPojoItem.Images
 )
