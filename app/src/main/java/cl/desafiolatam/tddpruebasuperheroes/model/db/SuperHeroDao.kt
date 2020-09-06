@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroMin
 
 @Dao
 interface SuperHeroDao {
@@ -17,4 +18,7 @@ interface SuperHeroDao {
 
     @Query("DELETE FROM supehero_table")
     suspend fun deleteAll()
+
+    @Query("SELECT id, name, img_md FROM supehero_table")
+    fun getMinimalSuperHeroesList(): LiveData<List<SuperHeroMin>>
 }
