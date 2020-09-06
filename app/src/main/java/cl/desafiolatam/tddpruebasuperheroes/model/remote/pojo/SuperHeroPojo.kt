@@ -1,6 +1,8 @@
 package cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo
 
+import androidx.room.TypeConverter
 import com.google.gson.annotations.SerializedName
+import org.jetbrains.annotations.NotNull
 
 /*
 data class SuperHeroPojo(
@@ -55,7 +57,7 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
             @SerializedName("gender")
             val gender: String, // Male
             @SerializedName("race")
-            val race: Any?, // null
+            val race: String, // null
             @SerializedName("height")
             val height: List<String>,
             @SerializedName("weight")
