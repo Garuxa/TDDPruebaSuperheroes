@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TDDPruebaSuperheroes</string>
+    <string name="race_2dots">Race:</string>
+    <string name="ht_dot">Ht.</string>
+    <string name="wt_dot">Wt.</string>
+    <string name="publisher_twodots">Publisher:</string>
 </resources>
