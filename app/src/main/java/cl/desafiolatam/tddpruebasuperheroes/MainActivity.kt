@@ -2,21 +2,13 @@ package cl.desafiolatam.tddpruebasuperheroes
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.desafiolatam.tddpruebasuperheroes.model.Repository
-import cl.desafiolatam.tddpruebasuperheroes.model.remote.RetrofitClient
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroMin
-import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroPojo
 import cl.desafiolatam.tddpruebasuperheroes.view.SuperHeroAdapter
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,13 +36,5 @@ class MainActivity : AppCompatActivity() {
             Log.d("MAIN", "$it")
             viewAdapter.updateItems(it)
         })
-        //repository.listSuperHero.observe(this, Observer { viewAdapter.updateItems(it) })
-
-        /*val picasso = Picasso.Builder(applicationContext)
-            //.indicatorsEnabled(true)
-            .loggingEnabled(true)
-            .build()
-
-        Picasso.setSingletonInstance(picasso)*/
     }
 }

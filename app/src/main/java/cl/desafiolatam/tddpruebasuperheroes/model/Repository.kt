@@ -2,7 +2,6 @@ package cl.desafiolatam.tddpruebasuperheroes.model
 
 import android.content.Context
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import cl.desafiolatam.tddpruebasuperheroes.model.db.SuperHeroEntity
 import cl.desafiolatam.tddpruebasuperheroes.model.db.SuperHeroRoomDatabase
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.RetrofitClient
@@ -26,25 +25,12 @@ class Repository(context: Context) {
 
         call.enqueue(object : Callback<SuperHeroPojo> {
             override fun onResponse(call: Call<SuperHeroPojo>, response: Response<SuperHeroPojo>) {
-                //Log.d("MAIN", "${response.code()}")
-                //Log.d("MAIN", "${call.request().url()}")
-                //Log.d("MAIN", "${response.body()}")
-                response.body()?.map {
-                    Log.d("MAIN", "${it.id} - ${it.name} - ${it.images.md}")
-                }
-                //listSuperHero.value = response.body()
+                Log.d("REPOSITORY", "Respuesta del servidor: ${response.code()}")
                 saveDB(superHeroToSuperHeroEntity(response.body()!!))
-                //viewAdapter.updateItems(response.body()!!)
-                //viewAdapter.notifyDataSetChanged()
             }
 
             override fun onFailure(call: Call<SuperHeroPojo>, t: Throwable) {
-                Log.d("MAIN", "Error " + t)
-                /*Toast.makeText(
-                    applicationContext,
-                    "Error: no pudimos recuperar los datos desde la api",
-                    Toast.LENGTH_SHORT
-                ).show()*/
+                Log.d("REPOSITORY", "Error " + t)
             }
         })
     }

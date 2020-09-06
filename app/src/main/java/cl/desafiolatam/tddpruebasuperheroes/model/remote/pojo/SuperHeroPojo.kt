@@ -1,31 +1,15 @@
 package cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo
 
-import androidx.room.ColumnInfo
-import androidx.room.TypeConverter
 import com.google.gson.annotations.SerializedName
-import org.jetbrains.annotations.NotNull
-
-/*
-data class SuperHeroPojo(
-    val id: Int,
-    val name: String,
-    val slug: String,
-    val powerstats: Map<String, List<String>>,
-    val appearance: Map<String, List<String>>,
-    val biography: Map<String, List<String>>,
-    val work: Map<String, List<String>>,
-    val connections: Map<String, List<String>>,
-    val images: Map<String, List<String>>
-)*/
 
 class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
     data class SuperHeroPojoItem(
         @SerializedName("id")
-        val id: Int, // 731
+        val id: Int,
         @SerializedName("name")
-        val name: String, // Zoom
+        val name: String,
         @SerializedName("slug")
-        val slug: String, // 731-zoom
+        val slug: String,
         @SerializedName("powerstats")
         val powerstats: Powerstats,
         @SerializedName("appearance")
@@ -41,74 +25,74 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
     ) {
         data class Powerstats(
             @SerializedName("intelligence")
-            val intelligence: Int, // 50
+            val intelligence: Int,
             @SerializedName("strength")
-            val strength: Int, // 10
+            val strength: Int,
             @SerializedName("speed")
-            val speed: Int, // 100
+            val speed: Int,
             @SerializedName("durability")
-            val durability: Int, // 28
+            val durability: Int,
             @SerializedName("power")
-            val power: Int, // 100
+            val power: Int,
             @SerializedName("combat")
-            val combat: Int // 28
+            val combat: Int
         )
 
         data class Appearance(
             @SerializedName("gender")
-            val gender: String, // Male
+            val gender: String,
             @SerializedName("race")
-            val race: String?, // null
+            val race: String?,
             @SerializedName("height")
             val height: List<String>,
             @SerializedName("weight")
             val weight: List<String>,
             @SerializedName("eyeColor")
-            val eyeColor: String, // Red
+            val eyeColor: String,
             @SerializedName("hairColor")
-            val hairColor: String // Brown
+            val hairColor: String
         )
 
         data class Biography(
             @SerializedName("fullName")
-            val fullName: String, // Hunter Zolomon
+            val fullName: String,
             @SerializedName("alterEgos")
-            val alterEgos: String, // No alter egos found.
+            val alterEgos: String,
             @SerializedName("aliases")
             val aliases: List<String>,
             @SerializedName("placeOfBirth")
-            val placeOfBirth: String, // -
+            val placeOfBirth: String,
             @SerializedName("firstAppearance")
-            val firstAppearance: String, // Flash Secret Files #3
+            val firstAppearance: String,
             @SerializedName("publisher")
-            val publisher: String?, // DC Comics
+            val publisher: String?,
             @SerializedName("alignment")
-            val alignment: String // bad
+            val alignment: String
         )
 
         data class Work(
             @SerializedName("occupation")
-            val occupation: String, // -
+            val occupation: String,
             @SerializedName("base")
-            val base: String // Keystone City, Kansas
+            val base: String
         )
 
         data class Connections(
             @SerializedName("groupAffiliation")
-            val groupAffiliation: String, // Secret Society of Super Villains, formerly Keystone Police Department, F.B.I.
+            val groupAffiliation: String,
             @SerializedName("relatives")
-            val relatives: String // Ashley Zolomon (ex-wife)
+            val relatives: String
         )
 
         data class Images(
             @SerializedName("xs")
-            val xs: String, // https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/731-zoom.jpg
+            val xs: String,
             @SerializedName("sm")
-            val sm: String, // https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/731-zoom.jpg
+            val sm: String,
             @SerializedName("md")
-            val md: String, // https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/731-zoom.jpg
+            val md: String,
             @SerializedName("lg")
-            val lg: String // https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/731-zoom.jpg
+            val lg: String
         )
     }
 }

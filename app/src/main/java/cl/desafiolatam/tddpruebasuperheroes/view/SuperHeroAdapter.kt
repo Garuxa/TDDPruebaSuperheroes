@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatam.tddpruebasuperheroes.R
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroMin
-import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroPojo
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.superheroes_list_item.view.*
 
