@@ -2,20 +2,22 @@ package cl.desafiolatam.tddpruebasuperheroes.model
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
+import cl.desafiolatam.tddpruebasuperheroes.model.db.SuperHeroEntity
+import cl.desafiolatam.tddpruebasuperheroes.model.db.SuperHeroRoomDatabase
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.RetrofitClient
 import cl.desafiolatam.tddpruebasuperheroes.model.remote.pojo.SuperHeroPojo
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Repository {
+class Repository(context: Context) {
 
     var listSuperHero = MutableLiveData<SuperHeroPojo>()
+    var superHerodb = SuperHeroRoomDatabase.getDatabase(context)
 
     fun loadApidata() {
         val service = RetrofitClient.retrofitInstance()
@@ -30,6 +32,7 @@ class Repository {
                     Log.d("MAIN", "${it.id} - ${it.name} - ${it.images.md}")
                 }
                 listSuperHero.value = response.body()
+                saveDB(superHeroToSuperHeroEntity(response.body()!!))
                 //viewAdapter.updateItems(response.body()!!)
                 //viewAdapter.notifyDataSetChanged()
             }
@@ -43,6 +46,28 @@ class Repository {
                 ).show()*/
             }
         })
+    }
+
+    fun superHeroToSuperHeroEntity(superHeroList: ArrayList<SuperHeroPojo.SuperHeroPojoItem>): List<SuperHeroEntity> {
+        return superHeroList.map { superHero ->
+            SuperHeroEntity(
+                superHero.id,
+                superHero.name,
+                superHero.slug,
+                superHero.powerstats,
+                superHero.appearance,
+                superHero.biography,
+                superHero.work,
+                superHero.connections,
+                superHero.images
+            )
+        }
+    }
+
+    fun saveDB(listSuperHeroEntity: List<SuperHeroEntity>) {
+        CoroutineScope(Dispatchers.IO).launch {
+            superHerodb.getSuperHeroDao().insertSuperHeroes(listSuperHeroEntity)
+        }
     }
 
 }
