@@ -100,5 +100,9 @@ class SuperHeroPojo : ArrayList<SuperHeroPojo.SuperHeroPojoItem>() {
 data class SuperHeroMin(
     val id: Int,
     val name: String,
+    var appear_race: String?,
+    val appear_height: List<String>,
+    val appear_weight: List<String>,
+    val bio_publisher: String?,
     val img_md: String
 )
