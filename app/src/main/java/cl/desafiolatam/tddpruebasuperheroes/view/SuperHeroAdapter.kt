@@ -22,11 +22,30 @@ class SuperHeroAdapter(private var myDataset: MutableList<SuperHeroMin>) :
     }
 
     override fun onBindViewHolder(holder: SuperHeroHolder, position: Int) {
+        val unkText = "Unknown  "
+        val noneText = "None"
         val superHero = myDataset[position]
         Picasso.get()
             .load(superHero.img_md)
             .into(holder.photo)
         holder.name_title.text = superHero.name
+        when {
+            (superHero.appear_race.equals(null)) -> holder.race.text = unkText
+            else -> holder.race.text = superHero.appear_race
+        }
+        when {
+            (superHero.appear_height.toString() == ("[-,  0 cm]")) -> holder.height.text = unkText
+            else -> holder.height.text = superHero.appear_height.toString()
+        }
+        when {
+            (superHero.appear_weight.toString() == ("[- lb,  0 kg]")) -> holder.weight.text =
+                unkText
+            else -> holder.weight.text = superHero.appear_weight.toString()
+        }
+        when {
+            (superHero.bio_publisher.equals(null)) -> holder.publisher.text = noneText
+            else -> holder.publisher.text = superHero.bio_publisher
+        }
     }
 
     override fun getItemCount(): Int {
@@ -34,8 +53,13 @@ class SuperHeroAdapter(private var myDataset: MutableList<SuperHeroMin>) :
     }
 
     class SuperHeroHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var photo = itemView.iv_superhero_list
-        var name_title = itemView.superhero_name_title
+        var name_title = itemView.superHero_name_item
+        var race = itemView.superHero_race_item
+        var height = itemView.superHero_height_item
+        var weight = itemView.superHero_weight_item
+        var publisher = itemView.superHero_publisher_item
+        var photo = itemView.superHero_img_list
+
     }
 
     fun updateItems(it: List<SuperHeroMin>) {
