@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
     tools:context=".view.MainActivity">
 
     <ImageView
@@ -24,12 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/superHero_race_list"
@@ -37,9 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:text="@string/race_2dots"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
         app:layout_constraintTop_toBottomOf="@+id/superHero_name_item" />
 
@@ -47,10 +44,9 @@
         android:id="@+id/superHero_race_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_race_list"
         app:layout_constraintTop_toBottomOf="@+id/superHero_name_item" />
 
@@ -60,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:text="@string/ht_dot"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
@@ -70,8 +65,8 @@
         android:id="@+id/superHero_height_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_height_list"
         app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
@@ -80,22 +75,22 @@
         android:id="@+id/superHero_weight_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:text="@string/wt_dot"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_height_item"
-        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_item" />
 
     <TextView
         android:id="@+id/superHero_weight_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_weight_list"
-        app:layout_constraintTop_toBottomOf="@+id/superHero_race_list" />
+        app:layout_constraintTop_toBottomOf="@+id/superHero_race_item" />
 
     <TextView
         android:id="@+id/superHero_publisher_list"
@@ -103,9 +98,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
         android:text="@string/publisher_twodots"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_img_list"
         app:layout_constraintTop_toBottomOf="@+id/superHero_height_list" />
 
@@ -113,10 +107,9 @@
         android:id="@+id/superHero_publisher_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
-        android:padding="4dp"
-        android:textSize="16sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/superHero_publisher_list"
-        app:layout_constraintTop_toBottomOf="@+id/superHero_height_list" />
+        app:layout_constraintTop_toBottomOf="@+id/superHero_height_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
