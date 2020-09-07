@@ -22,7 +22,7 @@ class SuperHeroAdapter(private var myDataset: MutableList<SuperHeroMin>) :
     }
 
     override fun onBindViewHolder(holder: SuperHeroHolder, position: Int) {
-        val unkText = "Unknown  "
+        val unkText = "Unknown"
         val noneText = "None"
         val superHero = myDataset[position]
         Picasso.get()
